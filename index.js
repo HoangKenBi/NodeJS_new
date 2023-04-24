@@ -14,7 +14,7 @@ app.use(session({
         // secure: true
     },
 }))
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT,()=>{
     console.log("Server is running...");
@@ -22,19 +22,6 @@ app.listen(PORT,()=>{
 app.set("view engine","ejs");
 app.use(express.static("public"));
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({extended:true}))
 
-app.get("/",function (req,res){
-    let student = {
-        name: "Nguyễn Văn An",
-        age: 19
-    };
-    let classRoom = {
-        name: "T2203E",
-        room: "B14"
-    }
-    res.render("home",{
-        student: student,
-        classRoom: classRoom
-    });
-});
+
